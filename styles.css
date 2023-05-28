@@ -1,0 +1,349 @@
+:root {
+  --white: #f5f5f5;
+  --black: #000;
+  --grey: #262626;
+  --light-grey: #a8a8a8;
+  --blue: #0095f6;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  background-color: #000;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    Arial, sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+  display: flex;
+  width: 100vw;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15%;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  border-right: 1px solid var(--grey);
+}
+
+.sidebar .top-section .logo {
+  /* Define your logo properties here */
+  width: 90px;
+  margin-bottom: 1rem;
+}
+
+.logo2 {
+  display: none;
+}
+
+.sidebar .link {
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 0;
+  color: var(--white);
+  font-size: 0.8rem;
+}
+
+.sidebar .link i {
+  margin-right: 10px;
+}
+
+.bottom-navbar {
+  display: none;
+  border-top: 0px solid var(--grey);
+  position: fixed;
+  bottom: 0;
+  width: 90%;
+  height: 60px;
+  background-color: transparent;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  margin: auto;
+}
+
+.bottom-link {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-section {
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 900px) {
+  .sidebar,
+  .bottom-section {
+    width: 30px;
+  }
+  .sidebar .link a {
+    display: none;
+  }
+  .logo {
+    display: none;
+  }
+  .logo2 {
+    display: block;
+    width: 1rem;
+    margin-bottom: 1rem;
+    margin-left: -5px;
+  }
+
+  .top-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-container {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 70vw !important;
+  }
+  .suggested-for-you {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+  .bottom-navbar {
+    display: flex;
+    background-color: #000;
+    border-top: 1px solid var(--grey);
+  }
+  .bottom-link {
+    display: flex !important;
+  }
+  .main-container,
+  .stories-container {
+    width: 90vw !important;
+  }
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.main-container {
+  padding: 1rem;
+  display: block;
+  width: 45vw;
+  margin-left: auto;
+  height: auto;
+  overflow-y: auto;
+}
+
+.suggested-for-you {
+  padding: 1rem;
+  width: 30%;
+}
+
+.stories-container {
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  padding: 10px 0;
+  gap: 1rem;
+  margin: auto;
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.story p {
+  margin: 0.5rem 0rem;
+  font-size: 0.65rem;
+  text-align: center;
+}
+
+.gradient-border {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  padding: 2px;
+}
+
+.gradient-border img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--black);
+}
+
+.post-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.post {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 300px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.post-info-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-info-flex ul {
+  padding-left: 0.5rem;
+  color: var(--light-grey);
+}
+
+.profile-pic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-info-flex p {
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.list-time {
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+.post-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.post-icons {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.post-icons-left {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.likes,
+.caption,
+.comments {
+  margin: 0.35rem 0;
+  font-size: 0.8rem;
+}
+
+.comments {
+  color: var(--light-grey);
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  margin-right: 0.75rem;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+
+.profile-info-name {
+  color: var(--light-grey);
+  margin: 0.2rem 0rem;
+}
+
+.switch {
+  color: var(--blue);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.profile-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0px 20px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.profile-list {
+  font-weight: 400;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 0.75rem;
+  row-gap: 0.35rem;
+  font-size: 0.5rem;
+  padding-left: 0rem;
+  color: var(--light-grey);
+  margin-bottom: 0;
+}
